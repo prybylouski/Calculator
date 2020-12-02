@@ -61,7 +61,9 @@ grid-auto-rows: minmax(100px, auto);
     cursor: pointer;
     transition: 0.1s all;
 }
-
+sup{
+    text-transform: lowercase;
+}
 .btn-hover-red:hover {
     background: radial-gradient( #ff0101, #5df5d4);
     color: #f2f2f2;
