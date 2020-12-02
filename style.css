@@ -1,5 +1,4 @@
 body {
-    @import url(https://allfont.ru/allfont.css?fonts=a_lcdnovaobl);
     widows: 100%;
     height: 100%;
     background-color: #eee;
@@ -28,7 +27,7 @@ header {
 }
 
 .calc-display-input { 
-    font-family: 'a_LCDNovaObl', arial;
+    font-family: 'Orbitron', sans-serif;
     width: 355px;
     height: 60px;
     margin: 20px 0;
