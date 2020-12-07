@@ -53,27 +53,28 @@ MemoryPendingOperation = "";
      display.value = MemoryCurrentNumber;
    } else {
      MemoryNewNumber = true;
-     if (MemoryPendingOperation === '+') {
-       MemoryCurrentNumber += parseFloat(localOperationMemory);
-     } else if (MemoryPendingOperation === '-') {
-       MemoryCurrentNumber -= parseFloat(localOperationMemory);
-     } else if (MemoryPendingOperation === '/') {
-       MemoryCurrentNumber /= parseFloat(localOperationMemory);
-     } else if (MemoryPendingOperation === '*') {
-       MemoryCurrentNumber *= parseFloat(localOperationMemory);
-    } else if (MemoryPendingOperation === 'xn') {
-        MemoryCurrentNumber = parseFloat(MemoryCurrentNumber)**parseFloat(localOperationMemory); 
-    } else if (MemoryPendingOperation === 'n√') {
-        MemoryCurrentNumber = parseFloat(MemoryCurrentNumber) ** (1/parseFloat(localOperationMemory));
-            display.value = MemoryCurrentNumber;
-     } else {
-       MemoryCurrentNumber = parseFloat(localOperationMemory);
-     }
+     switch (MemoryPendingOperation) {
+      case '+': MemoryCurrentNumber += parseFloat(localOperationMemory);
+        break;
+      case '-': MemoryCurrentNumber -= parseFloat(localOperationMemory);
+         break;
+      case '/':  MemoryCurrentNumber /= parseFloat(localOperationMemory);
+        break;
+      case '*':  MemoryCurrentNumber *= parseFloat(localOperationMemory);
+        break;
+      case 'xn': MemoryCurrentNumber = parseFloat(MemoryCurrentNumber)**parseFloat(localOperationMemory);
+        break;
+      case 'n√': MemoryCurrentNumber = MemoryCurrentNumber = parseFloat(MemoryCurrentNumber) ** (1/parseFloat(localOperationMemory));
+        break;
+      case 'xn': MemoryCurrentNumber = parseFloat(MemoryCurrentNumber)**parseFloat(localOperationMemory);
+        break;
+        default: MemoryCurrentNumber = parseFloat(localOperationMemory);
+     };
      display.value = MemoryCurrentNumber;
      MemoryPendingOperation = oper;
-   }
- };
- 
+    };
+  };
+    
  function decimal() {
    let localDecimalMemory = display.value;
  
