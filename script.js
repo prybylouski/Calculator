@@ -7,7 +7,7 @@ display = document.getElementById('display');
 let MemoryCurrentNumber = 0,
 MemoryNewNumber = false,
 MemoryPendingOperation = "";
-//let degree;
+
   
 
  
@@ -49,7 +49,6 @@ MemoryPendingOperation = "";
  
  function operation(oper) {
    let localOperationMemory = display.value;
-   //console.log('Клик по кнопке операции ' + oper + ' !');
    if (MemoryNewNumber && MemoryPendingOperation !== '=') {
      display.value = MemoryCurrentNumber;
    } else {
@@ -62,18 +61,7 @@ MemoryPendingOperation = "";
        MemoryCurrentNumber /= parseFloat(localOperationMemory);
      } else if (MemoryPendingOperation === '*') {
        MemoryCurrentNumber *= parseFloat(localOperationMemory);
-    } /*else if (MemoryPendingOperation === "%") {
-        console.log('MemoryPendingOperation = ' + MemoryPendingOperation);
-        console.log('MemoryCurrentNumber = ' + MemoryCurrentNumber);
-        console.log('localOperationMemory = ' + localOperationMemory);
-        MemoryCurrentNumber = parseFloat(localOperationMemory /100 * MemoryCurrentNumber); 
-       //MemoryCurrentNumber = parseFloat(localOperationMemory/100);
-       console.log('MemoryPendingOperation = ' + MemoryPendingOperation);
-        console.log('MemoryCurrentNumber = ' + MemoryCurrentNumber);
-        console.log('localOperationMemory = ' + localOperationMemory);
-        } else if (MemoryPendingOperation === "‰") {
-        MemoryCurrentNumber /= parseFloat(localOperationMemory);
-    }*/ else if (MemoryPendingOperation === 'xn') {
+    } else if (MemoryPendingOperation === 'xn') {
         MemoryCurrentNumber = parseFloat(MemoryCurrentNumber)**parseFloat(localOperationMemory); 
     } else if (MemoryPendingOperation === 'n√') {
         MemoryCurrentNumber = parseFloat(MemoryCurrentNumber) ** (1/parseFloat(localOperationMemory));
