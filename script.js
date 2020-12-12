@@ -13,28 +13,28 @@ MemoryPendingOperation = "";
  
  for (let i = 0; i < numbers.length; i++) {
    let number = numbers[i];
-   number.addEventListener('click', function (e) {
+   number.addEventListener('click',(e) => {
      numberPress(e.target.textContent);
    });
  };
  
  for (let i = 0; i < operations.length; i++) {
    let operationBtn = operations[i];
-   operationBtn.addEventListener('click', function (e) {
+   operationBtn.addEventListener('click', (e) => {
      operation(e.target.textContent);
    });
  };
  
  for (let i = 0; i < clearBtns.length; i++) {
    let clearBtn = clearBtns[i];
-   clearBtn.addEventListener('click', function (e) {
+   clearBtn.addEventListener('click', (e) => {
      clear(e.target.id);
    });
  };
  
  decimalBtn.addEventListener('click', decimal);
  
- function numberPress(num) {
+ let numberPress = (num)  => {
    if (MemoryNewNumber) {
      display.value = num;
      MemoryNewNumber = false;
@@ -47,7 +47,7 @@ MemoryPendingOperation = "";
    }
  };
  
- function operation(oper) {
+ let operation = (oper) => {
    let localOperationMemory = display.value;
    if (MemoryNewNumber && MemoryPendingOperation !== '=') {
      display.value = MemoryCurrentNumber;
@@ -89,7 +89,7 @@ MemoryPendingOperation = "";
    display.value = localDecimalMemory;
  };
  
- function clear(id) {
+ let clear = (id) => {
    if (id === 'ce') {
      display.value = '0';
      MemoryNewNumber = true;
